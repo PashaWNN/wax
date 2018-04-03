@@ -1,0 +1,60 @@
+\hypertarget{classwax_1_1WButton}{}\section{wax.\+W\+Button Class Reference}
+\label{classwax_1_1WButton}\index{wax.\+W\+Button@{wax.\+W\+Button}}
+
+
+Inheritance diagram for wax.\+W\+Button\+:
+% FIG 0
+
+
+Collaboration diagram for wax.\+W\+Button\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classwax_1_1WButton_a307e253a01fc91d1b59149721d4dcb81}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, text=\char`\"{}Button\char`\"{}, action=\textquotesingle{}\textquotesingle{}, enabled=True, visible=True, html\+\_\+method\+\_\+post=False)
+\item 
+def \hyperlink{classwax_1_1WButton_a0ab72382e1d27554b7bd80cd88f7f45b}{html} (self)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Button element
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{wax\+::\+W\+Button@{wax\+::\+W\+Button}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!wax\+::\+W\+Button@{wax\+::\+W\+Button}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+(self, text=""Button"", action=\textquotesingle{}\textquotesingle{}, enabled=\+True, visible=\+True, html\+\_\+method\+\_\+post=\+False)}{__init__(self, text="Button", action='', enabled=True, visible=True, html_method_post=False)}}]{\setlength{\rightskip}{0pt plus 5cm}def wax.\+W\+Button.\+\_\+\+\_\+init\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{text = {\ttfamily \char`\"{}Button\char`\"{}}, }
+\item[{}]{action = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{enabled = {\ttfamily True}, }
+\item[{}]{visible = {\ttfamily True}, }
+\item[{}]{html\+\_\+method\+\_\+post = {\ttfamily False}}
+\end{DoxyParamCaption}
+)}\hypertarget{classwax_1_1WButton_a307e253a01fc91d1b59149721d4dcb81}{}\label{classwax_1_1WButton_a307e253a01fc91d1b59149721d4dcb81}
+\begin{DoxyVerb}Constructor
+@param text Text on the button
+@param enabled Is it active to click
+@param visible Is it visible on the form
+@param action What action it will trigger
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\index{wax\+::\+W\+Button@{wax\+::\+W\+Button}!html@{html}}
+\index{html@{html}!wax\+::\+W\+Button@{wax\+::\+W\+Button}}
+\subsubsection[{\texorpdfstring{html(self)}{html(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def wax.\+W\+Button.\+html (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{classwax_1_1WButton_a0ab72382e1d27554b7bd80cd88f7f45b}{}\label{classwax_1_1WButton_a0ab72382e1d27554b7bd80cd88f7f45b}
+\begin{DoxyVerb}This function returns html-formatted element if it isn't hidden
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+wax.\+py\end{DoxyCompactItemize}
