@@ -1,23 +1,29 @@
 \hypertarget{classwax_1_1WForm}{}\section{wax.\+W\+Form Class Reference}
 \label{classwax_1_1WForm}\index{wax.\+W\+Form@{wax.\+W\+Form}}
+
+
+Form class Form is a basic class to render form on the Web-\/page or in the terminal.  
+
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 def \hyperlink{classwax_1_1WForm_a400e90df6e579a351b42a1deede3e998}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, title=\char`\"{}Wax Form\char`\"{})
-\item 
-def \hyperlink{classwax_1_1WForm_a900c258a7b86f9a0ff0bc581c0a9c3d0}{set\+\_\+title} (self, title)
-\item 
-def \hyperlink{classwax_1_1WForm_a3b36cb931fb67695e4d660d5d10da855}{html} (self)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+def \hyperlink{classwax_1_1WForm_a900c258a7b86f9a0ff0bc581c0a9c3d0}{set\+\_\+title} (self, title)\hypertarget{classwax_1_1WForm_a900c258a7b86f9a0ff0bc581c0a9c3d0}{}\label{classwax_1_1WForm_a900c258a7b86f9a0ff0bc581c0a9c3d0}
+
+\begin{DoxyCompactList}\small\item\em Change title title New title. \end{DoxyCompactList}\item 
+def \hyperlink{classwax_1_1WForm_a3b36cb931fb67695e4d660d5d10da855}{html} (self)\hypertarget{classwax_1_1WForm_a3b36cb931fb67695e4d660d5d10da855}{}\label{classwax_1_1WForm_a3b36cb931fb67695e4d660d5d10da855}
+
+\begin{DoxyCompactList}\small\item\em This function returns html-\/formatted form. \end{DoxyCompactList}\item 
 def \hyperlink{classwax_1_1WForm_aceb0b7e3addedb8b531ae1faccf107e7}{add\+\_\+object} (self, obj)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Add a component to this form. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-\begin{DoxyVerb}Form class
-Form is a basic class to render form on the Web-page or in the terminal. It must be returned from action functions.
-\end{DoxyVerb}
- 
+Form class Form is a basic class to render form on the Web-\/page or in the terminal. 
+
+It must be returned from action functions. 
 
 \subsection{Constructor \& Destructor Documentation}
 \index{wax\+::\+W\+Form@{wax\+::\+W\+Form}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
@@ -28,10 +34,11 @@ Form is a basic class to render form on the Web-page or in the terminal. It must
 \item[{}]{title = {\ttfamily \char`\"{}Wax~Form\char`\"{}}}
 \end{DoxyParamCaption}
 )}\hypertarget{classwax_1_1WForm_a400e90df6e579a351b42a1deede3e998}{}\label{classwax_1_1WForm_a400e90df6e579a351b42a1deede3e998}
-\begin{DoxyVerb}Constructor
-@param title Title of form.
-\end{DoxyVerb}
- 
+
+
+Constructor. 
+
+title Title of form. 
 
 \subsection{Member Function Documentation}
 \index{wax\+::\+W\+Form@{wax\+::\+W\+Form}!add\+\_\+object@{add\+\_\+object}}
@@ -42,31 +49,19 @@ Form is a basic class to render form on the Web-page or in the terminal. It must
 \item[{}]{obj}
 \end{DoxyParamCaption}
 )}\hypertarget{classwax_1_1WForm_aceb0b7e3addedb8b531ae1faccf107e7}{}\label{classwax_1_1WForm_aceb0b7e3addedb8b531ae1faccf107e7}
-\begin{DoxyVerb}Add a component to this form
-@param obj A component to add
-@return Pointer to this component
-\end{DoxyVerb}
- \index{wax\+::\+W\+Form@{wax\+::\+W\+Form}!html@{html}}
-\index{html@{html}!wax\+::\+W\+Form@{wax\+::\+W\+Form}}
-\subsubsection[{\texorpdfstring{html(self)}{html(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def wax.\+W\+Form.\+html (
-\begin{DoxyParamCaption}
-\item[{}]{self}
-\end{DoxyParamCaption}
-)}\hypertarget{classwax_1_1WForm_a3b36cb931fb67695e4d660d5d10da855}{}\label{classwax_1_1WForm_a3b36cb931fb67695e4d660d5d10da855}
-\begin{DoxyVerb}This function returns html-formatted form
-\end{DoxyVerb}
- \index{wax\+::\+W\+Form@{wax\+::\+W\+Form}!set\+\_\+title@{set\+\_\+title}}
-\index{set\+\_\+title@{set\+\_\+title}!wax\+::\+W\+Form@{wax\+::\+W\+Form}}
-\subsubsection[{\texorpdfstring{set\+\_\+title(self, title)}{set_title(self, title)}}]{\setlength{\rightskip}{0pt plus 5cm}def wax.\+W\+Form.\+set\+\_\+title (
-\begin{DoxyParamCaption}
-\item[{}]{self, }
-\item[{}]{title}
-\end{DoxyParamCaption}
-)}\hypertarget{classwax_1_1WForm_a900c258a7b86f9a0ff0bc581c0a9c3d0}{}\label{classwax_1_1WForm_a900c258a7b86f9a0ff0bc581c0a9c3d0}
-\begin{DoxyVerb}Change title
-@param title New title
-\end{DoxyVerb}
- 
+
+
+Add a component to this form. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & \hyperlink{classwax_1_1WObject}{W\+Object} to add \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to this component
+\end{DoxyReturn}
+Type\+Error if obj isn\textquotesingle{}t \hyperlink{classwax_1_1WObject}{W\+Object} 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
