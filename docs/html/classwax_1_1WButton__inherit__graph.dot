@@ -4,5 +4,5 @@ digraph "wax.WButton"
   node [fontname="Helvetica",fontsize="10",shape=record];
   Node1 [label="wax.WButton",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
   Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="wax.WObject",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classwax_1_1WObject.html"];
+  Node2 [label="wax.WObject",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classwax_1_1WObject.html",tooltip="Parent class for all GUI elements, such as Label, TextEdit or Button. "];
 }

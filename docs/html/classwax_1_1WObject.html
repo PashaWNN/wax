@@ -94,6 +94,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">wax.WObject Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Parent class for all GUI elements, such as Label, TextEdit or Button.  
+ <a href="classwax_1_1WObject.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for wax.WObject:</div>
 <div class="dyncontent">
@@ -104,17 +107,24 @@ Inheritance diagram for wax.WObject:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a47041eb6776f954ff5a380583c183651"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwax_1_1WObject.html#a47041eb6776f954ff5a380583c183651">__init__</a> (self, visible=True, enabled=True)</td></tr>
+<tr class="memdesc:a47041eb6776f954ff5a380583c183651"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a47041eb6776f954ff5a380583c183651">More...</a><br /></td></tr>
 <tr class="separator:a47041eb6776f954ff5a380583c183651"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55fcacc733b25ca002ce8c7a2e929f6e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwax_1_1WObject.html#a55fcacc733b25ca002ce8c7a2e929f6e">html</a> (self)</td></tr>
+<tr class="memdesc:a55fcacc733b25ca002ce8c7a2e929f6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for rendering HTML code of this element.  <a href="#a55fcacc733b25ca002ce8c7a2e929f6e">More...</a><br /></td></tr>
 <tr class="separator:a55fcacc733b25ca002ce8c7a2e929f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31f1bd94ebc9de98e0621e70f912b088"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwax_1_1WObject.html#a31f1bd94ebc9de98e0621e70f912b088">render_curses</a> (self, y, x, scr, sel=False)</td></tr>
+<tr class="memdesc:a31f1bd94ebc9de98e0621e70f912b088"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render this object to a curses screen.  <a href="#a31f1bd94ebc9de98e0621e70f912b088">More...</a><br /></td></tr>
+<tr class="separator:a31f1bd94ebc9de98e0621e70f912b088"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98bb0b956f5eb1a3582028632a271d06"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwax_1_1WObject.html#a98bb0b956f5eb1a3582028632a271d06">set_visible</a> (self, state)</td></tr>
+<tr class="memdesc:a98bb0b956f5eb1a3582028632a271d06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setting hidden state of element.  <a href="#a98bb0b956f5eb1a3582028632a271d06">More...</a><br /></td></tr>
 <tr class="separator:a98bb0b956f5eb1a3582028632a271d06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace86bad06af0382e6957061d69586e07"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwax_1_1WObject.html#ace86bad06af0382e6957061d69586e07">set_enabled</a> (self, state)</td></tr>
+<tr class="memdesc:ace86bad06af0382e6957061d69586e07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setting active state of element.  <a href="#ace86bad06af0382e6957061d69586e07">More...</a><br /></td></tr>
 <tr class="separator:ace86bad06af0382e6957061d69586e07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><pre class="fragment">Parent class for all GUI elements, such as Label, TextEdit or Button
-</pre> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<div class="textblock"><p>Parent class for all GUI elements, such as Label, TextEdit or Button. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a47041eb6776f954ff5a380583c183651"></a>
 <div class="memitem">
 <div class="memproto">
@@ -144,10 +154,16 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">Constructor.
-@param visible Is element must be shown on the form
-@param enabled Is element able to change it's value or grayed
-</pre> 
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">visible</td><td>Is element must be shown on the form </td></tr>
+    <tr><td class="paramname">enabled</td><td>Is element able to change it's value or grayed </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -164,8 +180,65 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">This function returns html-formatted element if it isn't hidden
-</pre> 
+
+<p>Function for rendering HTML code of this element. </p>
+<dl class="section return"><dt>Returns</dt><dd>A string with HTML-code of element </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a31f1bd94ebc9de98e0621e70f912b088"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def wax.WObject.render_curses </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>scr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>sel</em> = <code>False</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Render this object to a curses screen. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">y</td><td>Y-coord on the screen </td></tr>
+    <tr><td class="paramname">x</td><td>X-coord on the screen </td></tr>
+    <tr><td class="paramname">scr</td><td>curses screen to render</td></tr>
+    <tr><td class="paramname">sel</td><td>component must be rendered as selected </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="ace86bad06af0382e6957061d69586e07"></a>
@@ -191,9 +264,16 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">Setting active state of element. If element is inactive, it grayed and unable to change value.
-@param state enabled state of element. Must be value of True or False. True for active and False for inactive
-</pre> 
+
+<p>Setting active state of element. </p>
+<p>If element is inactive, it grayed and unable to change value.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>Enabled state of element. Must be value of True or False. True for active and False for inactive </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="a98bb0b956f5eb1a3582028632a271d06"></a>
@@ -219,9 +299,15 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">Setting hidden state of element
-@param state state of element. Must be value of True or False. True for visible and False for invisible
-</pre> 
+
+<p>Setting hidden state of element. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>State of element. Must be value of True or False. True for visible and False for invisible </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

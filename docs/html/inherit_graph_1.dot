@@ -3,5 +3,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node1 [label="wax.WaxServer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classwax_1_1WaxServer.html"];
+  Node1 [label="wax.WForm",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classwax_1_1WForm.html",tooltip="Form class Form is a basic class to render form on the Web-page or in the terminal. "];
 }
