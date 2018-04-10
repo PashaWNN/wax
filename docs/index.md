@@ -1,37 +1,73 @@
-## Welcome to GitHub Pages
+## WAX - Web and Console Settings
 
-You can use the [editor on GitHub](https://github.com/PashaWNN/wax/edit/master/docs/index.md) to maintain and preview the content for your website in Markdown files.
+**WAX** это простой микройфреймворк, предоставляющий возможности построения пользовательских интерфейсов, направленных, в первую очередь, на использование в среде системного администрирования для изменения настроек.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Режимы работы
 
-### Markdown
+Приложение, построенное на *WAX* может работать в двух режимах: в *режиме терминала* и в *режиме сервера*.
+В первом случае приложение показывает интерфейс прямо в терминале с помощью библиотеки *curses*, а во втором — строит такой же интерфейс при подключении через веб-браузер
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
+### Пример кода
+Вот пример простой программы, которая складывает(или вычитает) два введённых числа. При запуске без параметров она запустится в терминале, а с флагами `-w` и, опционально, `-p`, запустит сервер, доступный по `http://localhost`
+```python
+from wax.Core import WObject, WForm, bind, bindkey
+from wax.Components import *
+from wax.WaxCurses import WaxCurses
+from wax.WaxServer import WaxServer
+import argparse as ap
+KEY_ESCAPE = 27
 
-# Header 1
-## Header 2
-### Header 3
+p = ap.ArgumentParser()                                                  #Parsing command line arguments
+p.add_argument("-w", "--web-server", dest='web', action='store_true',
+               help='Start a web-server')
+p.add_argument('-p', '--port', type=int, default=80)
+a = p.parse_args()
 
-- Bulleted
-- List
+if a.web:                                                    #If '-w' specified
+  w = WaxServer(port=a.port)                                 #Run server on -p port
+else:                                                        #Else
+  w = WaxCurses()                                            #Run in terminal
 
-1. Numbered
-2. List
+@bind(w, 'index')                                            #Form to show by default
+def form_calc(args):
+  wf = WForm('Calculator')                                   #Title
+  wf.add_object(WTextEdit('A:', '2', name='a'))              #TextEdit's
+  wf.add_object(WTextEdit('B:', '4', name='b'))              #Values will be stored in args['variables'] as a dict
+  wf.add_object(WButton("Add", action="add"))                #A button for first action
+  wf.add_object(WButton("Subtract", action="subtract"))      #And for second
+  return wf
 
-**Bold** and _Italic_ and `Code` text
+@bind(w, 'add')
+@bind(w, 'subtract')
+def form_show_result(args):                                  #Form to show if action == 'add' or 'subtract'
+  wf = WForm('Result')
+  try:
+    a = int(args['variables']['a'])                          #Restoring vars from dictionary
+    b = int(args['variables']['b'])
+    if args['action'] == 'add':                              #Calculating
+      result = 'Result is ' + str(a+b)
+    elif args['action'] == 'subtract':
+      result = 'Result is ' + str(a-b)
+    wf.add_object(WLabel(text=result))                       #Output result
+  except ValueError:                                         #Or, if input is not integers, show error
+    wf.add_object(WLabel('Invalid input provided!'))
+  wf.add_object(WButton("Return", action="index"))           #Add a button to return
+  return wf
 
-[Link](url) and ![Image](src)
+@bindkey(w, KEY_ESCAPE)                                      #Affect only if "w" is WaxCurses
+def terminate():
+  exit()
+
+w.start()
 ```
+### Как это выглядит
+[Режим сервера](https://raw.githubusercontent.com/PashaWNN/wax/master/docs/web.png)
+[Режим терминала](https://raw.githubusercontent.com/PashaWNN/wax/master/docs/terminal.png)
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### Контакты
 
-### Jekyll Themes
+[Мой сайт](http://pashawnn.ru)
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/PashaWNN/wax/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Вы всегда можете написать мне на почту pashawnn@pashawnn.ru или в Telegram @pashawnn
 
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
