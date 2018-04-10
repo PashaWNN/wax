@@ -15,7 +15,7 @@ class WaxServer(WaxInterface):
   def _decode_request(req):
     def d(s):
       return urllib.parse.unquote(s).replace("+", " ")#.decode('utf8') 
-    result = {mode: 'web', variables: {}}
+    result = {'mode': 'web', 'variables': {}}
     regexp = r'([^\/?\s&=]+)=([^\/?\s&=]+)'
     res = re.findall(regexp, req)
     regexp = r'(?:GET|POST)\s\/([\w]*)\??.+'
