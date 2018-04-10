@@ -62,8 +62,8 @@ def terminate():
 w.start()
 ```
 ### Как это выглядит
-![Режим сервера](https://github.com/PashaWNN/wax/blob/master/docs/web.png "Server mode")
-![Режим терминала](https://github.com/PashaWNN/wax/blob/master/docs/terminal.png "Terminal mode")
+![Режим сервера]({{ "/web.png" | absolute_url }})
+![Режим терминала]({{ "/terminal.png" | absolute_url }})
 
 ### Контакты
 
