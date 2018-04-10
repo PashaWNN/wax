@@ -1,66 +1,46 @@
-WAX Project
-===========
-**WAX** is framework for creating settings user interfaces(such as home router settings on 192.168.0.1) to be showed as web-interface and/or CLI.
+WAX Project pre-release 0.0.1
+=============================
+**WAX** is framework for creating user interfaces(such as home router settings on 192.168.0.1) as web-interface and/or CLI.
 
 Simple example
 --------------
-The code below will create a single window with label and button.
+The code below will create a single window with label.
 
 ```python
-from wax import *
+from wax.Core import WObject, WForm, bind, bindkey
+from wax.Components import *
+from wax.WaxCurses import WaxCurses
+from wax.WaxServer import WaxServer
 
-def form_index(args):
-  wf = WForm("Foobar")                                                       # Creating a form with title "Foobar"
-  wf.add_object(WLabel('Hello, world'))                                      # Adding label to it
-  wf.add_object(WButton("foo", action="index"))                              # Adding button
-  return wf #Action function always must return WForm()
+w = WaxCurses()                                            #Creating WAX instance for terminal
+#w = WaxServer()                                           #Creating WAX instance for web
 
-
-w = WaxServer(port=8080)                                                     # Creating server class object
-w.bind_action('index', form_index)                                           # Binding default action to our form
-w.start()                                                                    # Firing it up
-```
-
-But it's too simple and boring and have no functionality. Let's go to more advanced example!
-Advanced example
-----------------
-```python
-from wax import *
-
-def form_calc(args):
-  wf = WForm('Calculator')
-  wf.add_object(WTextEdit('A:', '2', name='a'))
-  wf.add_object(WTextEdit('B:', '4', name='b'))
-  wf.add_object(WButton("Add", action="add"))
-  wf.add_object(WButton("Subtract", action="subtract"))
+@bind(w, 'index')
+def hello(args):                                           #Defining form to be showed by default('index')
+  wf = WForm()                                             #Form object
+  wf.add_object(WLabel('Hello, WAX world!'))               #A label
+  if args['mode'] == 'terminal':
+    wf.add_object(WButton('Hello!', action='terminate'))   #And a button if app running in terminal mode(we can't exit from browser)
   return wf
 
-def form_show_result(args):
-  wf = WForm('Result')
-  a = int(args['variables']['a'])     #When 'Add' and 'Subtract' button pressed, TextEdit's values passed
-  b = int(args['variables']['b'])     #To args['variables'] dictionary
-  if args['action'] == 'add':         #If action were 'add'
-    result = 'Result is ' + str(a+b)  #Add our integers
-  elif args['action'] == 'subtract':  #Else subtract it.
-    result = 'Result is ' + str(a-b)
-  wf.add_object(WLabel(text=result))  #Let's create label with result
-  wf.add_object(WButton("Return", action="index"))
-  return wf
+@bind(w, 'terminate')                                      #We'll call this function when button with action 'terminate' is triggered
+@bindkey(w, 27)                                            #And when key with code 27(Escape) is pressed, but it's only in terminal mode
+def terminate(args=None):                                  #Defining exit function
+  exit()
 
-w = WaxServer(port=8080)
-w.bind_action("index", form_calc)           #Binding form_calc to index page
-w.bind_action("add", form_show_result)      #Binding form_show_result to actions, triggered by buttons on index page
-w.bind_action("subtract", form_show_result)
-w.start()
+w.start()                                                  # Firing it up
 ```
 
+But it's too simple and boring and have no functionality. You can see more useful examples in `/examples`
 
 TODO
 ----
-At this moment the project is at very beginning. A lot of work in future:
-* Basic ncurses functionality
-* UI Layouts
-* Dynamic page updating
-* More UI components, such as ProgressBars etc.
-* Tabs, accordions...
+* `WFormsCarousel` rendering in WEB mode
+* Authorization
+* Multiline components support for terminal mode
+* Docs
+* Unit tests
+* More components
+* Passing arguments through actions
+* WTimer or/and just self-updating WForm
 And a lot of different things...

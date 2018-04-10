@@ -22,7 +22,7 @@ class WaxCurses(WaxInterface):
         v = o._get_value()
         if v:
           _vars[v[0]] = v[1]
-    args = {'action': action, 'variables': _vars}  
+    args = {'action': action, 'variables': _vars, 'mode': 'terminal'}  
     s._current_form = s._actions[action](args)
 
   def _main(s, stdscr):
