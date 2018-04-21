@@ -1,4 +1,4 @@
-from .Core import *
+from .Core import WaxInterface, WObject, WForm
 import curses
 
 class WaxCurses(WaxInterface):

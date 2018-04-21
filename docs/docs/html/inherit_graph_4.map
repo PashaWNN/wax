@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$classwax_1_1WaxServer_1_1WaxServer.html" title="Main class for Wax server You may specify port to start when creating WaxServer. " alt="" coords="153,5,337,32"/>
+<area shape="rect" id="node2" href="$classwax_1_1WaxCurses_1_1WaxCurses.html" title="Main class for Wax CLI controller After creation, you must bind some actions via bind_action() method..." alt="" coords="153,5,345,32"/>
+<area shape="rect" id="node3" href="$classwax_1_1WaxServer_1_1WaxServer.html" title="Main class for Wax server You may specify port to start when creating WaxServer. " alt="" coords="157,56,341,83"/>
 </map>
