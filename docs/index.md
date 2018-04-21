@@ -66,7 +66,7 @@ w.start()
 ![Режим терминала]({{ "/terminal.png" | absolute_url }})
 
 ### Документация
-[Doxygen] (http://pashawnn.github.io/wax/docs/docs/html/annotated.html)
+[Doxygen](http://pashawnn.github.io/wax/docs/docs/html/annotated.html)
 *Позже здесь будет ссылка на туториал на русском языке*
 
 ### Контакты
