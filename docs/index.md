@@ -62,8 +62,8 @@ def terminate():
 w.start()
 ```
 ### Как это выглядит
-[Режим сервера](https://raw.githubusercontent.com/PashaWNN/wax/master/docs/web.png "Server mode")
-[Режим терминала](https://raw.githubusercontent.com/PashaWNN/wax/master/docs/terminal.png "Terminal mode")
+![Режим сервера]({{ "/web.png" | absolute_url }})
+![Режим терминала]({{ "/terminal.png" | absolute_url }})
 
 ### Документация
 [Doxygen] (/wax/docs/docs/html/annotated.html)
