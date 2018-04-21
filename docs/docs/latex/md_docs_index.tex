@@ -1,0 +1,74 @@
+{\bfseries W\+AX} это простой микройфреймворк, предоставляющий возможности построения пользовательских интерфейсов, направленных, в первую очередь, на использование в среде системного администрирования для изменения настроек сервера или каких-\/либо приложений на нём.
+
+\subsubsection*{Режимы работы}
+
+Приложение, построенное на {\itshape W\+AX} может работать в двух режимах\+: в {\itshape режиме терминала} и в {\itshape режиме сервера}. В первом случае приложение показывает интерфейс прямо в терминале с помощью библиотеки {\itshape curses}, а во втором — строит такой же интерфейс при подключении через веб-\/браузер
+
+\subsubsection*{Пример кода}
+
+Вот пример простой программы, которая складывает(или вычитает) два введённых числа. При запуске без параметров она запустится в терминале, а с флагами {\ttfamily -\/w} и, опционально, {\ttfamily -\/p}, запустит сервер, доступный по {\ttfamily \href{http://localhost}{\tt http\+://localhost}} 
+\begin{DoxyCode}
+1 from wax.Core import WObject, WForm, bind, bindkey
+2 from wax.Components import *
+3 from wax.WaxCurses import WaxCurses
+4 from wax.WaxServer import WaxServer
+5 import argparse as ap
+6 KEY\_ESCAPE = 27
+7 
+8 p = ap.ArgumentParser()                                                  #Parsing command line arguments
+9 p.add\_argument("-w", "--web-server", dest='web', action='store\_true',
+10                help='Start a web-server')
+11 p.add\_argument('-p', '--port', type=int, default=80)
+12 a = p.parse\_args()
+13 
+14 if a.web:                                                    #If '-w' specified
+15   w = WaxServer(port=a.port)                                 #Run server on -p port
+16 else:                                                        #Else
+17   w = WaxCurses()                                            #Run in terminal
+18 
+19 @bind(w, 'index')                                            #Form to show by default
+20 def form\_calc(args):
+21   wf = WForm('Calculator')                                   #Title
+22   wf.add\_object(WTextEdit('A:', '2', name='a'))              #TextEdit's
+23   wf.add\_object(WTextEdit('B:', '4', name='b'))              #Values will be stored in args['variables'] as
+       a dict
+24   wf.add\_object(WButton("Add", action="add"))                #A button for first action
+25   wf.add\_object(WButton("Subtract", action="subtract"))      #And for second
+26   return wf
+27 
+28 @bind(w, 'add')
+29 @bind(w, 'subtract')
+30 def form\_show\_result(args):                                  #Form to show if action == 'add' or 'subtract'
+31   wf = WForm('Result')
+32   try:
+33     a = int(args['variables']['a'])                          #Restoring vars from dictionary
+34     b = int(args['variables']['b'])
+35     if args['action'] == 'add':                              #Calculating
+36       result = 'Result is ' + str(a+b)
+37     elif args['action'] == 'subtract':
+38       result = 'Result is ' + str(a-b)
+39     wf.add\_object(WLabel(text=result))                       #Output result
+40   except ValueError:                                         #Or, if input is not integers, show error
+41     wf.add\_object(WLabel('Invalid input provided!'))
+42   wf.add\_object(WButton("Return", action="index"))           #Add a button to return
+43   return wf
+44 
+45 @bindkey(w, KEY\_ESCAPE)                                      #Affect only if "w" is WaxCurses
+46 def terminate():
+47   exit()
+48 
+49 w.start()
+\end{DoxyCode}
+ \subsubsection*{Как это выглядит}
+
+\href{https://raw.githubusercontent.com/PashaWNN/wax/master/docs/web.png}{\tt Режим сервера} \href{https://raw.githubusercontent.com/PashaWNN/wax/master/docs/terminal.png}{\tt Режим терминала}
+
+\subsubsection*{Документация}
+
+\href{http://pashawnn.github.io/wax/docs}{\tt Doxygen} {\itshape Позже здесь будет ссылка на туториал на русском языке}
+
+\subsubsection*{Контакты}
+
+\href{http://pashawnn.ru}{\tt Мой сайт}
+
+Вы всегда можете написать мне на почту \href{mailto:pashawnn@pashawnn.ru}{\tt pashawnn@pashawnn.\+ru} или в Telegram  

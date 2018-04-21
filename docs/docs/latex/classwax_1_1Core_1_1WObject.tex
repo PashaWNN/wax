@@ -1,0 +1,110 @@
+\hypertarget{classwax_1_1Core_1_1WObject}{}\section{wax.\+Core.\+W\+Object Class Reference}
+\label{classwax_1_1Core_1_1WObject}\index{wax.\+Core.\+W\+Object@{wax.\+Core.\+W\+Object}}
+
+
+Parent class for all G\+UI elements, such as Label, Text\+Edit or Button.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classwax_1_1Core_1_1WObject_ae6a315f847d25f16d9238af0a52adbdd}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, enabled=True)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+def {\bfseries set\+\_\+value} (self, value)\hypertarget{classwax_1_1Core_1_1WObject_a92e17df52d239fb808a7dc35b993111b}{}\label{classwax_1_1Core_1_1WObject_a92e17df52d239fb808a7dc35b993111b}
+
+\item 
+def \hyperlink{classwax_1_1Core_1_1WObject_a41c9d6f3ac6431512b954df3afe8b521}{html} (self)
+\begin{DoxyCompactList}\small\item\em Function for rendering H\+T\+ML code of this element. \end{DoxyCompactList}\item 
+def \hyperlink{classwax_1_1Core_1_1WObject_a6b02871acf93de9352856b6f543dd4b1}{render\+\_\+curses} (self, sel=False)
+\begin{DoxyCompactList}\small\item\em Render this object to a curses screen. \end{DoxyCompactList}\item 
+def \hyperlink{classwax_1_1Core_1_1WObject_ac127564b44b2495ee987a4f6a61f01e1}{set\+\_\+enabled} (self, state)
+\begin{DoxyCompactList}\small\item\em Setting active state of element. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Parent class for all G\+UI elements, such as Label, Text\+Edit or Button. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{wax\+::\+Core\+::\+W\+Object@{wax\+::\+Core\+::\+W\+Object}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!wax\+::\+Core\+::\+W\+Object@{wax\+::\+Core\+::\+W\+Object}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+(self, enabled=\+True)}{__init__(self, enabled=True)}}]{\setlength{\rightskip}{0pt plus 5cm}def wax.\+Core.\+W\+Object.\+\_\+\+\_\+init\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{enabled = {\ttfamily True}}
+\end{DoxyParamCaption}
+)}\hypertarget{classwax_1_1Core_1_1WObject_ae6a315f847d25f16d9238af0a52adbdd}{}\label{classwax_1_1Core_1_1WObject_ae6a315f847d25f16d9238af0a52adbdd}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em visible} & Is element must be shown on the form \\
+\hline
+{\em enabled} & Is element able to change it\textquotesingle{}s value or grayed \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{wax\+::\+Core\+::\+W\+Object@{wax\+::\+Core\+::\+W\+Object}!html@{html}}
+\index{html@{html}!wax\+::\+Core\+::\+W\+Object@{wax\+::\+Core\+::\+W\+Object}}
+\subsubsection[{\texorpdfstring{html(self)}{html(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def wax.\+Core.\+W\+Object.\+html (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{classwax_1_1Core_1_1WObject_a41c9d6f3ac6431512b954df3afe8b521}{}\label{classwax_1_1Core_1_1WObject_a41c9d6f3ac6431512b954df3afe8b521}
+
+
+Function for rendering H\+T\+ML code of this element. 
+
+\begin{DoxyReturn}{Returns}
+A string with H\+T\+M\+L-\/code of element 
+\end{DoxyReturn}
+\index{wax\+::\+Core\+::\+W\+Object@{wax\+::\+Core\+::\+W\+Object}!render\+\_\+curses@{render\+\_\+curses}}
+\index{render\+\_\+curses@{render\+\_\+curses}!wax\+::\+Core\+::\+W\+Object@{wax\+::\+Core\+::\+W\+Object}}
+\subsubsection[{\texorpdfstring{render\+\_\+curses(self, sel=\+False)}{render_curses(self, sel=False)}}]{\setlength{\rightskip}{0pt plus 5cm}def wax.\+Core.\+W\+Object.\+render\+\_\+curses (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{sel = {\ttfamily False}}
+\end{DoxyParamCaption}
+)}\hypertarget{classwax_1_1Core_1_1WObject_a6b02871acf93de9352856b6f543dd4b1}{}\label{classwax_1_1Core_1_1WObject_a6b02871acf93de9352856b6f543dd4b1}
+
+
+Render this object to a curses screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & Y-\/coord on the screen \\
+\hline
+{\em x} & X-\/coord on the screen \\
+\hline
+{\em scr} & curses screen to render\\
+\hline
+{\em sel} & component must be rendered as selected \\
+\hline
+\end{DoxyParams}
+\index{wax\+::\+Core\+::\+W\+Object@{wax\+::\+Core\+::\+W\+Object}!set\+\_\+enabled@{set\+\_\+enabled}}
+\index{set\+\_\+enabled@{set\+\_\+enabled}!wax\+::\+Core\+::\+W\+Object@{wax\+::\+Core\+::\+W\+Object}}
+\subsubsection[{\texorpdfstring{set\+\_\+enabled(self, state)}{set_enabled(self, state)}}]{\setlength{\rightskip}{0pt plus 5cm}def wax.\+Core.\+W\+Object.\+set\+\_\+enabled (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{state}
+\end{DoxyParamCaption}
+)}\hypertarget{classwax_1_1Core_1_1WObject_ac127564b44b2495ee987a4f6a61f01e1}{}\label{classwax_1_1Core_1_1WObject_ac127564b44b2495ee987a4f6a61f01e1}
+
+
+Setting active state of element. 
+
+If element is inactive, it grayed and unable to change value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & Enabled state of element. Must be value of True or False. True for active and False for inactive \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+wax/Core.\+py\end{DoxyCompactItemize}

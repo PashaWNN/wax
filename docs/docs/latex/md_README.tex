@@ -1,0 +1,50 @@
+{\bfseries W\+AX} is framework for creating user interfaces(such as home router settings on 192.\+168.\+0.\+1) as web-\/interface and/or C\+LI.
+
+\subsection*{Simple example }
+
+The code below will create a single window with label.
+
+
+\begin{DoxyCode}
+1 from wax.Core import WObject, WForm, bind, bindkey
+2 from wax.Components import *
+3 from wax.WaxCurses import WaxCurses
+4 from wax.WaxServer import WaxServer
+5 
+6 w = WaxCurses()                                            #Creating WAX instance for terminal
+7 #w = WaxServer()                                           #Creating WAX instance for web
+8 
+9 @bind(w, 'index')
+10 def hello(args):                                           #Defining form to be showed by default('index')
+11   wf = WForm()                                             #Form object
+12   wf.add\_object(WLabel('Hello, WAX world!'))               #A label
+13   if args['mode'] == 'terminal':
+14     wf.add\_object(WButton('Hello!', action='terminate'))   #And a button if app running in terminal mode(we
+       can't exit from browser)
+15   return wf
+16 
+17 @bind(w, 'terminate')                                      #We'll call this function when button with
+       action 'terminate' is triggered
+18 @bindkey(w, 27)                                            #And when key with code 27(Escape) is pressed,
+       but it's only in terminal mode
+19 def terminate(args=None):                                  #Defining exit function
+20   exit()
+21 
+22 w.start()                                                  # Firing it up
+\end{DoxyCode}
+
+
+But it\textquotesingle{}s too simple and boring and have no functionality. You can see more useful examples in {\ttfamily /examples}
+
+\subsection*{T\+O\+DO }
+
+
+\begin{DoxyItemize}
+\item Authorization
+\item Multiline components support for terminal mode
+\item Docs
+\item Unit tests
+\item More components
+\item Passing arguments through actions
+\item W\+Timer or/and just self-\/updating W\+Form And a lot of different things... 
+\end{DoxyItemize}

@@ -77,14 +77,14 @@ class WForm:
   def __init__(self, title="Wax Form"):
     """Constructor
     Kwargs:
-      title Title of form.
+      title: Title of form.
     """
     self.set_title(title)
     self._objects = []
 
   def set_title(self, title):
     """Change title
-      title New title
+      title: New title
     """
     self._title = str(title)
 

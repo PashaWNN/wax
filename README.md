@@ -35,7 +35,6 @@ But it's too simple and boring and have no functionality. You can see more usefu
 
 TODO
 ----
-* `WFormsCarousel` rendering in WEB mode
 * Authorization
 * Multiline components support for terminal mode
 * Docs

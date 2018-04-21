@@ -1,0 +1,59 @@
+\hypertarget{classwax_1_1Core_1_1WaxInterface}{}\section{wax.\+Core.\+Wax\+Interface Class Reference}
+\label{classwax_1_1Core_1_1WaxInterface}\index{wax.\+Core.\+Wax\+Interface@{wax.\+Core.\+Wax\+Interface}}
+
+
+Parent class for Wax\+Curses and Wax\+Server Provides common methods.  
+
+
+
+
+Inheritance diagram for wax.\+Core.\+Wax\+Interface\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{classwax_1_1Core_1_1WaxInterface__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self)\hypertarget{classwax_1_1Core_1_1WaxInterface_a9494be173be6e980524d2e2527583f0b}{}\label{classwax_1_1Core_1_1WaxInterface_a9494be173be6e980524d2e2527583f0b}
+
+\item 
+def \hyperlink{classwax_1_1Core_1_1WaxInterface_af10d87f79dc119f4d5f30cd70ef9feb9}{bind\+\_\+action} (self, name, func)
+\begin{DoxyCompactList}\small\item\em Bind actions. \end{DoxyCompactList}\item 
+def {\bfseries bind\+\_\+key} (self, key, func)\hypertarget{classwax_1_1Core_1_1WaxInterface_a58dd4d72ef0a9123e85ea22f90e48797}{}\label{classwax_1_1Core_1_1WaxInterface_a58dd4d72ef0a9123e85ea22f90e48797}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Parent class for Wax\+Curses and Wax\+Server Provides common methods. 
+
+\subsection{Member Function Documentation}
+\index{wax\+::\+Core\+::\+Wax\+Interface@{wax\+::\+Core\+::\+Wax\+Interface}!bind\+\_\+action@{bind\+\_\+action}}
+\index{bind\+\_\+action@{bind\+\_\+action}!wax\+::\+Core\+::\+Wax\+Interface@{wax\+::\+Core\+::\+Wax\+Interface}}
+\subsubsection[{\texorpdfstring{bind\+\_\+action(self, name, func)}{bind_action(self, name, func)}}]{\setlength{\rightskip}{0pt plus 5cm}def wax.\+Core.\+Wax\+Interface.\+bind\+\_\+action (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{name, }
+\item[{}]{func}
+\end{DoxyParamCaption}
+)}\hypertarget{classwax_1_1Core_1_1WaxInterface_af10d87f79dc119f4d5f30cd70ef9feb9}{}\label{classwax_1_1Core_1_1WaxInterface_af10d87f79dc119f4d5f30cd70ef9feb9}
+
+
+Bind actions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of action to trigger it. \\
+\hline
+{\em func} & A function, that will be called, when action is triggered. That function {\bfseries must accept one parameter}, that is a dictionary with action name and passes variables and it {\bfseries must return \hyperlink{classwax_1_1Core_1_1WForm}{W\+Form} object} to render it. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+wax/Core.\+py\end{DoxyCompactItemize}
