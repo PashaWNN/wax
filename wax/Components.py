@@ -2,7 +2,16 @@ from .Core import WObject
 from html import escape, unescape
 
 class WCheckBox(WObject):
+  """Checkbox element
+  """
   def __init__(self, text='Checkbox', name='checkbox', value=False, enabled=True):
+    """Constructor.
+    Kwargs:
+      text: Text on checkbox
+      value: Boolean value, is checkbox checked or not
+      enabled: Is value can be changed
+      name: name to be passed to args[]
+    """
     self._text = text
     self._enabled = enabled
     self._value = value
@@ -42,12 +51,9 @@ class WLabel(WObject):
   """Label element.
   """
   def __init__(self, text="Label"):
-    """
-    Creating label
-
+    """Constructor
     Kwargs:
       text:  Text to be shown in element
-      visible: Is label visible on the form
     """
     super().__init__()
     self._text = text
@@ -59,7 +65,6 @@ class WLabel(WObject):
 
   def set_style(self, bold=False, italic=False):
     """Setting font style
-
     Kwargs:
       bold:  Bold font
       italic:  Italic font
@@ -126,7 +131,16 @@ class WButton(WObject):
 
 
 class WFormsCarousel(WObject):
+  """Forms carousel to navigate between forms.
+  """
   def __init__(self, tabs=[], current_action=None, enabled=True, width=50):
+    """Constructor
+    Kwargs:
+      tabs: List of tuples of actions and it's labels
+      current_action: Current action name, needed for correct working. Pass args['action'] to it.
+      enabled: is carousel enabled
+      width: width of carousel in terminal mode(in symbols)
+    """
     super().__init__(enabled=enabled)
     self._tabs = tabs
     self._enabled = enabled
@@ -138,7 +152,23 @@ class WFormsCarousel(WObject):
           self._index = i
   
   def html(self):
-    pass
+    dis = ('disabled' if not self._enabled else '')
+    if self._index == 0:
+      dis1 = 'disabled'
+      act1 = ''
+    else:
+      dis1 = dis
+      act1 = self._tabs[self._index-1][0]
+    if self._index == len(self._tabs)-1:
+      dis2 = 'disabled'
+      act2 = ''
+    else:
+      dis2 = dis
+      act2 = self._tabs[self._index+1][0]
+    btn = '<button %s formaction="%s">%s</button>'
+    lbl = self._tabs[self._index][1]
+    txt = '%s %s %s' % (btn % (dis1, act1, '<'), lbl, btn % (dis2, act2, '>'))
+    return txt
 
   def render_curses(self, sel=False):    
     w = self._width - 13

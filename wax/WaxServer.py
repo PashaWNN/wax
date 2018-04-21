@@ -1,4 +1,4 @@
-from .Core import WaxInterface
+from .Core import WaxInterface, WForm
 from http.server import *
 from html import escape, unescape
 import urllib
